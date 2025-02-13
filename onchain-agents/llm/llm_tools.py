@@ -39,7 +39,8 @@ def process_with_flan_t5(prompt, system_prompt):
 def process_with_gemini(prompt, system_prompt):
     try:
         combined_prompt = f"{system_prompt}\n\n{prompt}"
-        response = genai.generate_text(model=gemini_model, prompt=combined_prompt)
+        response = genai.generate_text(
+            model=gemini_model, prompt=combined_prompt)
         return response.text.strip()
     except Exception as e:
         return f"Error with Google Gemini: {e}"

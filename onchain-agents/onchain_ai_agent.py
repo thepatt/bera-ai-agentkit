@@ -3,7 +3,11 @@ import os
 from openai import OpenAI
 from transformers import pipeline
 import google.generativeai as genai
-from llm_tools import process_with_openai, process_with_flan_t5, process_with_gemini
+from llm.llm_tools import (
+    process_with_openai,
+    process_with_flan_t5,
+    process_with_gemini,
+)
 from tool_registry import determine_action
 from system_prompt import DEFAULT_SYSTEM_PROMPT
 from langchain_openai import ChatOpenAI
@@ -11,7 +15,8 @@ from langchain_core.tools import Tool
 from langchain.agents import AgentExecutor
 from langchain.agents import create_react_agent
 from langchain_core.prompts import PromptTemplate
-from blockchain_utils import get_balance, get_transaction  # new import
+from blockchain_utils import get_balance
+from blockchain_utils import get_transaction
 
 # Load environment variables
 load_dotenv()
@@ -94,7 +99,7 @@ def configure_langgraph():
 
 
 # 7. Chatbot logic
-def onchain_ai_agent_2():
+def onchain_ai_agent():
     print("AI Chatbot is ready! Ask me anything or perform Berachain actions.")
     print("Type 'exit' or 'quit' to end the chat.")
 
@@ -146,4 +151,4 @@ def onchain_ai_agent_2():
 
 
 if __name__ == "__main__":
-    onchain_ai_agent_2()
+    onchain_ai_agent()
