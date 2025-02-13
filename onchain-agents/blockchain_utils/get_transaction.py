@@ -1,6 +1,7 @@
 import json
 from .web3_connection import web3  # Import the established Web3 connection
 
+
 def get_transaction(tx_hash):
     try:
         tx = web3.eth.get_transaction(tx_hash)

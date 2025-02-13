@@ -1,5 +1,6 @@
 from .web3_connection import web3  # Import the established Web3 connection
 
+
 def get_balance(address):
     try:
         if not web3.is_address(address):

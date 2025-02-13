@@ -1,5 +1,6 @@
 import re
-from blockchain_utils import get_balance, get_transaction
+from blockchain_utils.get_transaction import get_transaction
+from blockchain_utils.get_balance import get_balance
 
 # Create a registry to support thousands of tools
 tool_registry = []

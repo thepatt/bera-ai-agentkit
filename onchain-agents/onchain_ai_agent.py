@@ -15,8 +15,8 @@ from langchain_core.tools import Tool
 from langchain.agents import AgentExecutor
 from langchain.agents import create_react_agent
 from langchain_core.prompts import PromptTemplate
-from blockchain_utils import get_balance
-from blockchain_utils import get_transaction
+from blockchain_utils.get_balance import get_balance
+from blockchain_utils.get_transaction import get_transaction
 
 # Load environment variables
 load_dotenv()
